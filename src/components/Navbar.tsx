@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Section, Tools } from "../tools";
+import { Tools } from "../tools";
 
 
 export function Navbar() {

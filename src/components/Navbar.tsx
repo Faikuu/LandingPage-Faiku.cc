@@ -33,7 +33,7 @@ export function Navbar() {
                   <div className="flex items-center pr-8">
                     <img src="logo.png" alt="Logo" className="h-16 w-16" />
                     <a id="home" href="#home" className="flex items-center py-5 px-2 text-gray-100 transition-colors hover:text-gray-500" onClick={() => handleNavClick('home')}>
-                      <span className="font-bold">{Tools.getAppName()}</span>
+                      <span className="text-3xl font-bold">{Tools.getAppName()}</span>
                     </a>
                   </div>
                   <div className="hidden md:flex items-center space-x-1">

@@ -5,7 +5,7 @@ export function Portfolio() {
     const sections = Tools.getSections();
   
     useEffect(() => {
-      const observer = new IntersectionObserver(handleIntersection, { threshold: 0.5 });
+      const observer = new IntersectionObserver(handleIntersection, { threshold: 0.2 });
   
       sections.forEach((section) => {
         if (section.ref.current) observer.observe(section.ref.current);
@@ -39,9 +39,9 @@ export function Portfolio() {
   
   function renderSection(section : Section, index : number) {
     return (
-      <section id={`section_${section.id}`} key={index} ref={section.ref} className="py-10 transition-opacity opacity-0">
+      <section id={`section_${section.id}`} key={index} ref={section.ref} className="py-10 px-6 transition-opacity opacity-0">
         <h2 className="text-3xl font-bold text-center transition-colors hover:text-neutral-600">{section.title}</h2>
-        <pre className='whitespace-pre-wrap tracking-tighter text-justify'>{section.description}</pre>
+        <pre className='whitespace-pre-wrap tracking-tighter text-justify max-w-[70vw]'>{section.description}</pre>
         {section.title === 'O mnie' && renderLogos()}
         {section.customHTML && <div dangerouslySetInnerHTML={{ __html: section.customHTML }} />}
         {section.gallery && renderGallery(section.gallery)}
@@ -69,7 +69,7 @@ function renderLogos() {
   
   function renderGallery(gallery : any) {
     return (
-      <div className="grid grid-cols-1 gap-4 w-[40vw] mx-auto">
+      <div className="grid grid-cols-1 gap-4 w-[70vw] max-w-[600px] mx-auto">
         {gallery.map(renderImage)}
       </div>
     );

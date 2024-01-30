@@ -29,8 +29,8 @@ getSections: () => {
       id: 'about',
       title: 'O mnie',
       description: `
-Jestem studentem studiów magisterskich na kierunku Informatyka w Biznesie, a moją pasją jest kreowanie innowacyjnych aplikacji webowych.
-Moje umiejętności obejmują projektowanie responsywnych stron internetowych oraz tworzenie aplikacji opartych na najnowszych technologiach webowych.
+Jestem studentem studiów magisterskich na kierunku Informatyka w Biznesie, a moją pasją jest tworzenie aplikacji webowych.
+Moje umiejętności obejmują projektowanie responsywnych stron internetowych oraz tworzenie aplikacji opartych na najnowszych technologiach.
 W mojej pracy kładę nacisk na staranność, kreatywność i nieustanne dążenie do rozwoju.
 Zachęcam do zapoznania się z moim portfolio oraz do nawiązania kontaktu w celu możliwej współpracy.
 

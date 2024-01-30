@@ -59,7 +59,7 @@ function renderLogos() {
   ];
 
   return (
-    <div className='flex justify-left space-x-4'>
+    <div className='flex justify-left space-x-2 max-w-[70vw] flex-wrap'>
       {logos.map((logo, index) => (
         <img key={index} src={`/icons/${logo}`} alt="Logo" className='h-8 transition-transform hover:scale-110 hover:transform hover:-translate-y-1' style={{ transformOrigin: 'center' }} />
       ))}

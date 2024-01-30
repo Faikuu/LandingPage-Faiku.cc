@@ -67,6 +67,12 @@ button:hover {
   transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
 
+.fade-out {
+  opacity: 0;
+  transform: scale(1);
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
 @keyframes slide-in {
   0% {
     transform: translateY(-100%);
@@ -78,4 +84,8 @@ button:hover {
 
 .navbar-slide-in {
   animation: slide-in 0.5s forwards;
+}
+
+.smooth-scroll {
+  transition: none;
 }

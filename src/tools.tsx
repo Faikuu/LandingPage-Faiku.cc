@@ -44,7 +44,7 @@ Technologie, wokół których się poruszam:
       description: ' ', 
       gallery: [
         {
-          src: 'screenshots/parrotype.png',
+          src: 'screenshots/parrotype.webp',
           alt: 'Aplikacja parrotype',
           url: 'https://github.com/Faikuu/parrotype',
           title: 'Parrotype',

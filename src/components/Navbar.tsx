@@ -31,7 +31,7 @@ export function Navbar() {
               <div className="flex justify-between">
                 <div className="flex space-x-4">
                   <div className="flex items-center pr-8">
-                    <img src="logo.png" alt="Logo" className="h-16 w-16" />
+                    <img src="logo.webp" alt="Logo" className="h-16 w-16" />
                     <a id="home" href="#home" className="flex items-center py-5 px-2 text-gray-100 transition-colors hover:text-gray-500" onClick={() => handleNavClick('home')}>
                       <span className="text-3xl font-bold">{Tools.getAppName()}</span>
                     </a>
@@ -43,7 +43,7 @@ export function Navbar() {
                   </div>
                 </div>
                 <div className="md:hidden flex items-center">
-                  <button className="mobile-menu-button" onClick={handleMenuToggle}>
+                  <button aria-label="Toggle Mobile Menu" className="mobile-menu-button" onClick={handleMenuToggle}>
                     <svg className="w-6 h-6 text-gray-500 hover:text-gray-700" xmlns="https://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"/>
                     </svg>

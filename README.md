@@ -1,30 +1,37 @@
-# React + TypeScript + Vite
+# React + TypeScript + Tailwind Landing Page
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repository is a simple landing page template built with React, TypeScript, and Tailwind CSS. It provides a quick starting point for creating modern and responsive landing pages. The project is configured to use npm for package management and includes a build script for compilation.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **React**: A popular JavaScript library for building user interfaces.
+- **TypeScript**: A superset of JavaScript that adds static typing to the language.
+- **Tailwind CSS**: A utility-first CSS framework for building responsive and efficient designs.
+- **Responsive**: Looks good on every device.
+- **Optimized**: Preloads every image dynamically.
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+1. **Clone the repository:**
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+   ```bash
+   git clone https://github.com/Faikuu/LandingPage-Faiku.cc.git
+   ```
+2. **Navigate to project's folder:**
+   ```bash
+   cd LandingPage-Faiku.cc
+   ```
+3. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+4. **Build for production:**
+   ```bash
+   npm run build
+   ```
+5. **Start development server:**
+   ```bash
+   npm start
+   ```
+6. **Visit your webpage:** 
+    Open your browser and visit http://localhost:3000 to view the landing page.

@@ -1,5 +1,7 @@
 # React + TypeScript + Tailwind Landing Page
 
+This is an official repository i am using to build my own landing page: faiku.cc
+
 This repository is a simple landing page template built with React, TypeScript, and Tailwind CSS. It provides a quick starting point for creating modern and responsive landing pages. The project is configured to use npm for package management and includes a build script for compilation.
 ![Screenshot2](https://i.imgur.com/aJQOMr6.png "Screenshot2")
 ![Screenshot1](https://i.imgur.com/6lEs5HL.png "Screenshot1")

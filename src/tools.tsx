@@ -6,7 +6,7 @@ export interface Section {
   title: string;
   description?: string;
   gallery?: Array<{
-    src: string;
+    src: string | string[];
     alt: string;
     url: string;
     title: string;
@@ -29,12 +29,9 @@ getSections: () => {
       id: 'about',
       title: 'O mnie',
       description: `
-Jestem studentem studiów magisterskich na kierunku Informatyka w Biznesie, a moją pasją jest tworzenie aplikacji webowych.
-Moje umiejętności obejmują projektowanie responsywnych stron internetowych oraz tworzenie aplikacji opartych na najnowszych technologiach.
-W mojej pracy kładę nacisk na staranność, kreatywność i nieustanne dążenie do rozwoju.
-Zachęcam do zapoznania się z moim portfolio oraz do nawiązania kontaktu w celu możliwej współpracy.
-
-Technologie, wokół których się poruszam:
+Jestem programistą tworzącym aplikacje w technologiach web'owych. Moja pasja do programowania zrodziła się już w wieku nastoletnim, gdy zainteresowałem się językiem C++.
+Zacząłem wtedy poznawać fundamenty działania komputerów oraz metod zarządzania pamięcią.
+Z czasem przeniosłem się na wysokopoziomowe języki oraz technologie, które wypisałem poniżej:
       ` 
     },
     { 
@@ -44,12 +41,19 @@ Technologie, wokół których się poruszam:
       description: ' ', 
       gallery: [
         {
-          src: 'screenshots/parrotype.webp',
+          src: ['screenshots/parrotype1.webp', 'screenshots/parrotype2.webp'],
           alt: 'Aplikacja parrotype',
           url: 'https://github.com/Faikuu/parrotype',
           title: 'Parrotype',
           description: 'Prosta aplikacja fullstack pobierająca pangramy z bazy danych bazując na lokalnym języku użytkownika.'
         },
+        {
+          src: ['screenshots/shopder2.png', 'screenshots/shopder1.gif', 'screenshots/shopder4.png', 'screenshots/shopder5.png', 'screenshots/shopder3.png'],
+          alt: 'Shopder',
+          url: 'https://play.google.com/store/apps/details?id=eu.bauhus.shopder',
+          title: 'Shopder',
+          description: 'Aplikacja zakupowa polegająca na przesuwaniu codziennych okazji w lewo lub prawo.'
+        }
       ] 
     },
     { 
@@ -58,7 +62,7 @@ Technologie, wokół których się poruszam:
       title: 'Kontakt',
       customHTML: `
         <div class="p-4 max-w-sm mx-auto border-[1px] rounded-xl shadow-md space-x-4">
-          <p>Zapraszam do kontaktu pod adresem email: faiku@proton.me</p>
+          <p>Zapraszam do kontaktu pod adresem email: adam@faiku.cc</p>
         </div>
       `
     },

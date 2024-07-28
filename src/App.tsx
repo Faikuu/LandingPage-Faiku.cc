@@ -1,4 +1,5 @@
 import './App.css'
+import Loader from './components/Loader';
 import { Navbar } from './components/Navbar';
 import { Portfolio } from './components/Portfolio';
 import ReactGA from "react-ga4";
@@ -16,6 +17,7 @@ function App() {
     <>
       <Navbar/>
       <Portfolio/>
+      <Loader/>
     </>
   )
 }

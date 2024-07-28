@@ -21,7 +21,7 @@ export default function Loader() {
                 <link rel="preload" as="image" href={`logo.webp`} />
             </Helmet>
             <div
-                className={`flex justify-center items-center fixed top-0 left-0 z-50 h-screen w-screen bg-[#191919] ${
+                className={`pointer-events-none flex justify-center items-center fixed top-0 left-0 z-50 h-screen w-screen bg-[#191919] ${
                     showLoader ? '' : 'opacity-0 transition-opacity duration-300'
                 }`}
             >

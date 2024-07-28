@@ -18,7 +18,7 @@
 }
 
 ::-webkit-scrollbar {
-  width: 8px; /* Set the width of the scrollbar */
+  width: 8px;
 }
 ::-webkit-scrollbar-thumb {
   background-color: #888;
@@ -88,4 +88,18 @@ button:hover {
 
 .smooth-scroll {
   transition: none;
+}
+
+
+.grid-animation {
+  animation: grid-animation 2s infinite alternate;
+}
+
+@keyframes grid-animation {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(10px);
+  }
 }

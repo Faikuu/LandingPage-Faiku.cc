@@ -88,9 +88,11 @@ function renderLogos() {
           <link key={`logos_${index}`} rel="preload" as="image" href={`/icons/${logo}`} />
         ))}
       </Helmet>
-      <div className='grid grid-cols-4 align-middle gap-4 justify-center max-w-[70vw] flex-wrap'>
+      <div className='grid grid-animation grid-cols-4 align-middle gap-4 justify-center max-w-[70vw] flex-wrap'>
         {logos.map((logo, index) => (
-          <img key={index} src={`/icons/${logo}`} alt={`Logo${index+1}`} className='h-8 transition-transform hover:scale-110 hover:transform hover:-translate-y-1 mx-auto' style={{ transformOrigin: 'center' }} />
+          <div key={index} className="bg-[#222] p-2 rounded-lg">
+            <img src={`/icons/${logo}`} alt={`Logo${index+1}`} className='h-8 transition-transform hover:scale-110 hover:transform hover:-translate-y-1 mx-auto' style={{ transformOrigin: 'center' }} />
+          </div>
         ))}
       </div>
     </>

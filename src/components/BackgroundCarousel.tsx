@@ -16,7 +16,7 @@ const logos = [
 
 export default function BackgroundCarousel() {
     return (
-        <div className="background-carousel absolute grayscale opacity-5 rotate-[-10deg]">
+        <div className="background-carousel absolute grayscale opacity-10 rotate-[-10deg]">
             <div className="scroll-container flex flex-row justify-center items-center gap-4">
                 {logos.map((logo, index) => (
                     <div key={index} className="logo-container">

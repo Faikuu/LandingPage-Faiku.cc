@@ -103,3 +103,18 @@ button:hover {
     transform: translateY(10px);
   }
 }
+
+@keyframes scroll {
+  0% {
+      transform: translateX(0);
+  }
+  100% {
+      transform: translateX(calc(-100% + 32px));
+  }
+}
+
+.scroll-container {
+  animation: scroll 30s ease-in-out alternate infinite;
+}
+
+

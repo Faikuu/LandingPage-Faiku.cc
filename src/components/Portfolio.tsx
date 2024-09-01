@@ -91,7 +91,9 @@ function renderLogos() {
       </Helmet>
       <div className='grid grid-cols-4 align-middle gap-4 justify-center max-w-[70vw] flex-wrap'>
         {logos.map((logo, index) => (
-          <img key={index} src={`/icons/${logo}`} alt={`Logo${index+1}`} className='h-8 transition-transform hover:scale-110 hover:transform hover:-translate-y-1 mx-auto' style={{ transformOrigin: 'center' }} />
+          <div className="bg-neutral-800 p-2 rounded-lg grid-animation">
+            <img key={index} src={`/icons/${logo}`} alt={`Logo${index+1}`} className='h-8 transition-transform hover:scale-110 hover:transform hover:-translate-y-1 mx-auto' style={{ transformOrigin: 'center' }} />
+          </div>
         ))}
       </div>
     </>

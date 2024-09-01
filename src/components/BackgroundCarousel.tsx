@@ -17,7 +17,7 @@ export default function BackgroundCarousel() {
     return (
         <div className="background-carousel absolute inset-0 grayscale opacity-5 rotate-[-10deg] overflow-hidden">
             <div className="logo-grid">
-                {[...Array(16)].map((_, rowIndex) => {
+                {[...Array(20)].map((_, rowIndex) => {
                     const shuffledLogos = [...logos].sort(() => 0.5 - Math.random());
                     return (
                         <div key={rowIndex} className="logo-row">

@@ -1,4 +1,3 @@
-
 const logos = [
     'React.webp',
     'symfony.png',
@@ -16,13 +15,20 @@ const logos = [
 
 export default function BackgroundCarousel() {
     return (
-        <div className="background-carousel absolute grayscale opacity-10 rotate-[-10deg]">
-            <div className="scroll-container flex flex-row justify-center items-center gap-4">
-                {logos.map((logo, index) => (
-                    <div key={index} className="logo-container">
-                        <img src={`/icons/${logo}`} alt={`Logo${index+1}`} className="w-32 object-cover" />
-                    </div>
-                ))}
+        <div className="background-carousel absolute inset-0 grayscale opacity-5 rotate-[-10deg] overflow-hidden">
+            <div className="logo-grid">
+                {[...Array(16)].map((_, rowIndex) => {
+                    const shuffledLogos = [...logos].sort(() => 0.5 - Math.random());
+                    return (
+                        <div key={rowIndex} className="logo-row">
+                            {shuffledLogos.map((logo, index) => (
+                                <div key={index} className="logo-container">
+                                    <img src={`/icons/${logo}`} alt={`Logo${index + 1}`} className="w-32 object-cover" />
+                                </div>
+                            ))}
+                        </div>
+                    );
+                })}
             </div>
         </div>
     );

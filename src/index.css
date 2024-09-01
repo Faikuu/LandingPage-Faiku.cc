@@ -104,17 +104,52 @@ button:hover {
   }
 }
 
-@keyframes scroll {
+@keyframes scroll-horizontal {
   0% {
       transform: translateX(0);
   }
   100% {
-      transform: translateX(calc(-100% + 32px));
+      transform: translateX(-50%);
   }
 }
 
-.scroll-container {
-  animation: scroll 30s ease-in-out alternate infinite;
+@keyframes scroll-vertical {
+  0% {
+      transform: translateY(0);
+  }
+  100% {
+      transform: translateY(-50%);
+  }
 }
 
+.background-carousel {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+  position: fixed;
+}
 
+.logo-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 64px;
+  width: 200%;
+  height: 200%;
+  animation: scroll-horizontal 30s linear infinite, scroll-vertical 60s linear infinite;
+}
+
+.logo-row {
+  display: flex;
+  flex-shrink: 0;
+  gap: 20px;
+  width: 100%;
+}
+
+.logo-container {
+  flex-shrink: 0;
+  width: 8rem;
+  height: 8rem;
+}

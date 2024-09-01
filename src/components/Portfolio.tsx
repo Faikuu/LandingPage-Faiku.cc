@@ -1,6 +1,7 @@
-import { Fragment, useEffect, useRef } from "react";
+import { Fragment, useEffect } from "react";
 import { Section, Tools } from "../tools";
 import { Helmet } from 'react-helmet';
+import useEmblaCarousel from 'embla-carousel-react'
 
 export function Portfolio() {
   const sections = Tools.getSections();
@@ -88,11 +89,9 @@ function renderLogos() {
           <link key={`logos_${index}`} rel="preload" as="image" href={`/icons/${logo}`} />
         ))}
       </Helmet>
-      <div className='grid grid-animation grid-cols-4 align-middle gap-4 justify-center max-w-[70vw] flex-wrap'>
+      <div className='grid grid-cols-4 align-middle gap-4 justify-center max-w-[70vw] flex-wrap'>
         {logos.map((logo, index) => (
-          <div key={index} className="bg-[#222] p-2 rounded-lg">
-            <img src={`/icons/${logo}`} alt={`Logo${index+1}`} className='h-8 transition-transform hover:scale-110 hover:transform hover:-translate-y-1 mx-auto' style={{ transformOrigin: 'center' }} />
-          </div>
+          <img key={index} src={`/icons/${logo}`} alt={`Logo${index+1}`} className='h-8 transition-transform hover:scale-110 hover:transform hover:-translate-y-1 mx-auto' style={{ transformOrigin: 'center' }} />
         ))}
       </div>
     </>
@@ -108,7 +107,11 @@ function renderGallery(gallery : any) {
 }
 
 function renderImage(image: any, index: number) {
-  const galleryRef = useRef<HTMLDivElement>(null);
+  const [emblaRef, embla] = useEmblaCarousel({
+    loop: true,
+    duration: 10,
+    align: 'start',
+  });
 
   useEffect(() => {
     if (Array.isArray(image.src)) {
@@ -123,14 +126,8 @@ function renderImage(image: any, index: number) {
     src = src[0];
   }
 
-  function scrollLeft() {
-    const galleryElement = galleryRef.current?.firstElementChild;
-    galleryElement?.scrollBy({ left: -250, behavior: 'smooth' });
-  }
-  function scrollRight() {
-    const galleryElement = galleryRef.current?.firstElementChild;
-    galleryElement?.scrollBy({ left: 250, behavior: 'smooth' });
-  }
+  const scrollPrev = () => embla?.scrollPrev();
+  const scrollNext = () => embla?.scrollNext();
 
   return (
     <>
@@ -144,35 +141,35 @@ function renderImage(image: any, index: number) {
         )}
       </Helmet>
       <div key={index} className="p-4 bg-neutral-900 rounded-lg shadow-lg relative">
-        <a href={image.url} className='flex flex-col'>
-          <div className="overflow-hidden rounded-lg" ref={galleryRef}>
-            {Array.isArray(image.src) ? (
-              <div ref={galleryRef} className="flex overflow-x-auto w-full gap-2">
-                {image.src.map((src: string, idx: number) => (
-                  <img key={idx} className='transition-all hover:scale-125 mx-auto flex-shrink-0 max-h-[500px] rounded-lg' src={src} alt={image.alt} />
-                ))}
+          <div className="overflow-hidden rounded-lg" ref={emblaRef}>
+            <div className="embla__container">
+              {Array.isArray(image.src) ? (
+                image.src.map((src: string, idx: number) => (
+                  <img key={idx} className='mx-auto flex-shrink-0 max-h-[500px] rounded-lg' src={src} alt={image.alt} />
+                ))
+              ) : (
+                <img className='transition-all hover:scale-125 mx-auto' src={src} alt={image.alt} />
+              )}
+            </div>
+            {Array.isArray(image.src) && (
+              <div className="absolute top-0 left-2 right-2 bottom-0 flex items-center justify-between px-4">
+                <button className="text-white" onClick={scrollPrev}>
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                  </svg>
+                </button>
+                <button className="color-white text-white" onClick={scrollNext}>
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </button>
               </div>
-            ) : (
-              <img className='transition-all hover:scale-125 mx-auto' src={src} alt={image.alt} />
             )}
           </div>
+        <a href={image.url} className='flex flex-col'>
+          <h3 className="text-2xl text-center pt-4">{image.title}</h3>
         </a>
-        <h3 className="text-2xl text-center pt-4">{image.title}</h3>
         <p className="text-center pt-4">{image.description}</p>
-        {Array.isArray(image.src) && (
-          <div className="absolute top-0 left-2 right-2 bottom-0 flex items-center justify-between px-4">
-            <button className="text-white" onClick={() => scrollLeft()}>
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-              </svg>
-            </button>
-            <button className="color-white text-white" onClick={() => scrollRight()}>
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </button>
-          </div>
-        )}
       </div>
     </>
   );

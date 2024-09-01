@@ -20,8 +20,11 @@ export function Navbar() {
             top: element.offsetTop - headerHeight,
             behavior: 'smooth',
           });
+        if (isMenuOpen) {
+          setIsMenuOpen(false);
         }
-      };
+      }
+    };
   
     return (
       <nav>
@@ -57,11 +60,23 @@ export function Navbar() {
               isMenuOpen
                 ? 'translate-x-0 visible'
                 : '-translate-x-full invisible'
-            } md:hidden transition-all ease-in-out duration-300`}
+            } md:hidden transition-all ease-in-out duration-300 relative bottom-1`}
           >
-            {sections.map((section, index) => (
-              <a key={index} href={`#${section.id}`} className="block py-2 px-4 text-sm border-b-[1px] border-neutral-700 bg-neutral-900 hover:bg-neutral-800" onClick={() => handleNavClick(`section_${section.id}`)}>{section.title}</a>
-            ))}
+            <div className="bg-neutral-900 shadow-lg px-4 py-2 rounded-md">
+              <ul className="space-y-2">
+                {sections.map((section, index) => (
+                  <li key={index}>
+                    <a
+                      href={`#${section.id}`}
+                      className="block py-2 px-4 text-sm hover:bg-neutral-800 rounded-md"
+                      onClick={() => handleNavClick(`section_${section.id}`)}
+                    >
+                      {section.title}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
       </nav>

@@ -1,4 +1,5 @@
 import './App.css'
+import BackgroundCarousel from './components/BackgroundCarousel';
 import Loader from './components/Loader';
 import { Navbar } from './components/Navbar';
 import { Portfolio } from './components/Portfolio';
@@ -15,6 +16,7 @@ function App() {
   ReactGA.send({ hitType: "pageview", page: '/', title: '/' });
   return (
     <>
+      <BackgroundCarousel/>
       <Navbar/>
       <Portfolio/>
       <Loader/>

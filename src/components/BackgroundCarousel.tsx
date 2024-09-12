@@ -1,16 +1,16 @@
 const logos = [
     'React.webp',
-    'symfony.png',
+    'symfony.webp',
     'NestJS.webp',
     'NodeJS.webp',
-    'expressjs.png',
+    'expressjs.webp',
     'PHP.webp',
-    'javascript.png',
-    'typescript.png',
-    'sql.png',
-    'postgre.png',
+    'javascript.webp',
+    'typescript.webp',
+    'sql.webp',
+    'postgre.webp',
     'mongo.svg',
-    'git.png',
+    'git.webp',
 ];
 
 export default function BackgroundCarousel() {

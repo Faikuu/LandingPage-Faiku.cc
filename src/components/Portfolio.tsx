@@ -65,17 +65,17 @@ function preloadImage(src: string) {
 function renderLogos() {
   const logos = [
     'React.webp',
-    'symfony.png',
+    'symfony.webp',
     'NestJS.webp',
     'NodeJS.webp',
-    'expressjs.png',
+    'expressjs.webp',
     'PHP.webp',
-    'javascript.png',
-    'typescript.png',
-    'sql.png',
-    'postgre.png',
+    'javascript.webp',
+    'typescript.webp',
+    'sql.webp',
+    'postgre.webp',
     'mongo.svg',
-    'git.png',
+    'git.webp',
   ];
 
   useEffect(() => {
@@ -111,7 +111,7 @@ function renderGallery(gallery : any) {
 function renderImage(image: any, index: number) {
   const [emblaRef, embla] = useEmblaCarousel({
     loop: true,
-    duration: 10,
+    duration: 20,
     align: 'start',
   });
 
@@ -155,12 +155,12 @@ function renderImage(image: any, index: number) {
             </div>
             {Array.isArray(image.src) && (
               <div className="absolute top-0 left-2 right-2 bottom-0 flex items-center justify-between px-4">
-                <button className="text-white" onClick={scrollPrev}>
+                <button className="text-white border-0" onClick={scrollPrev}>
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                   </svg>
                 </button>
-                <button className="color-white text-white" onClick={scrollNext}>
+                <button className="text-white border-0" onClick={scrollNext}>
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>

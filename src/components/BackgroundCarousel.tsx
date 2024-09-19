@@ -23,7 +23,7 @@ export default function BackgroundCarousel() {
                         <div key={rowIndex} className="logo-row">
                             {shuffledLogos.map((logo, index) => (
                                 <div key={index} className="logo-container">
-                                    <img src={`/icons/${logo}`} alt={`Logo${index + 1}`} className="w-32 object-cover" />
+                                    <img src={`/icons/${logo}`} alt={`Logo${index + 1}`} width={32} className="w-32 object-cover" />
                                 </div>
                             ))}
                         </div>

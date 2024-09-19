@@ -26,7 +26,7 @@ export default function Loader() {
                 }`}
             >
                 <div className="flex items-center justify-center">
-                    <img src="logo.webp" alt="Logo" className="h-64 w-64" />
+                    <img height={64} width={64} src="logo.webp" alt="Logo" className="h-64 w-64" />
                 </div>
             </div>
         </>

@@ -91,8 +91,8 @@ function renderLogos() {
       </Helmet>
       <div className='grid grid-cols-4 align-middle gap-4 justify-center max-w-[70vw] flex-wrap'>
         {logos.map((logo, index) => (
-          <div className="bg-neutral-800 p-2 rounded-lg grid-animation">
-            <img key={index} src={`/icons/${logo}`} alt={`Logo${index+1}`} className='h-8 transition-transform hover:scale-110 hover:transform hover:-translate-y-1 mx-auto' style={{ transformOrigin: 'center' }} />
+          <div key={index} className="bg-neutral-800 p-2 rounded-lg grid-animation">
+            <img loading="lazy" src={`/icons/${logo}`} alt={`Logo${index+1}`} className='inline-block h-auto w-auto max-h-8 transition-transform hover:scale-110 hover:transform hover:-translate-y-1 mx-auto' />
           </div>
         ))}
       </div>
@@ -147,20 +147,20 @@ function renderImage(image: any, index: number) {
             <div className="embla__container">
               {Array.isArray(image.src) ? (
                 image.src.map((src: string, idx: number) => (
-                  <img key={idx} className='mx-auto flex-shrink-0 max-h-[500px] rounded-lg' src={src} alt={image.alt} />
+                  <img loading="lazy" key={idx} className='mx-auto flex-shrink-0 max-h-[500px] rounded-lg' src={src} alt={image.alt} />
                 ))
               ) : (
-                <img className='transition-all hover:scale-125 mx-auto' src={src} alt={image.alt} />
+                <img loading="lazy" className='transition-all hover:scale-125 mx-auto' src={src} alt={image.alt} />
               )}
             </div>
             {Array.isArray(image.src) && (
               <div className="absolute top-0 left-2 right-2 bottom-0 flex items-center justify-between px-4">
-                <button className="text-white border-0" onClick={scrollPrev}>
+                <button className="text-white border-0" onClick={scrollPrev} aria-label="Previous">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                   </svg>
                 </button>
-                <button className="text-white border-0" onClick={scrollNext}>
+                <button className="text-white border-0" onClick={scrollNext} aria-label="Next">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>

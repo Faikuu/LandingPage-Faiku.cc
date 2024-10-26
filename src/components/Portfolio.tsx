@@ -21,7 +21,7 @@ export function Portfolio() {
   }, [sections]);
 
   return (
-    <div className="space-y-20 pt-16 max-w-screen-sm">
+    <div className="flex flex-col gap-12 space-y-20 pt-16 max-w-screen-sm">
       {sections.map(renderSection)}
     </div>
   );

@@ -154,7 +154,7 @@ function renderImage(image: any, index: number) {
               )}
             </div>
             {Array.isArray(image.src) && (
-              <div className="absolute top-0 left-2 right-2 bottom-0 flex items-center justify-between px-4">
+              <div className="absolute inset-0 h-fit top-[50%] flex items-center justify-between px-4">
                 <button className="text-white border-0" onClick={scrollPrev} aria-label="Previous">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -168,10 +168,10 @@ function renderImage(image: any, index: number) {
               </div>
             )}
           </div>
-        <a href={image.url} className='flex flex-col'>
+        <a href={image.url} className='flex flex-col pointer-events-auto cursor-pointer'>
           <h3 className="text-2xl text-center pt-4">{image.title}</h3>
+          <p className="text-center pt-4">{image.description}</p>
         </a>
-        <p className="text-center pt-4">{image.description}</p>
       </div>
     </>
   );

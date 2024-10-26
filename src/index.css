@@ -143,6 +143,7 @@ button:hover {
 
 .logo-row {
   display: flex;
+  justify-content: center;
   flex-shrink: 0;
   gap: 20px;
   width: 100%;

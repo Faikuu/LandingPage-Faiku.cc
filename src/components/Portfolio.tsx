@@ -147,7 +147,7 @@ function renderImage(image: any, index: number) {
             <div className="embla__container">
               {Array.isArray(image.src) ? (
                 image.src.map((src: string, idx: number) => (
-                  <img loading="lazy" key={idx} className='mx-auto flex-shrink-0 max-h-[500px] rounded-lg' src={src} alt={image.alt} />
+                  <img loading="lazy" key={idx} className='object-scale-down mx-auto flex-shrink-0 max-h-[500px] rounded-lg' src={src} alt={image.alt} />
                 ))
               ) : (
                 <img loading="lazy" className='transition-all hover:scale-125 mx-auto' src={src} alt={image.alt} />

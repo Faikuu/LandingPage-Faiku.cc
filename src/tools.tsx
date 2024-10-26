@@ -43,7 +43,18 @@ Cześć, mam na imię Adam i tworzę aplikacje w technologiach web'owych. Jeżel
           alt: 'Aplikacja parrotype',
           url: 'https://github.com/Faikuu/parrotype',
           title: 'Aplikacja Parrotype',
-          description: 'Prosta aplikacja fullstack pobierająca pangramy z bazy danych bazując na lokalnym języku użytkownika.'
+          description: 'Prosta aplikacja fullstack (React + Nest) pobierająca pangramy z bazy danych bazując na lokalnym języku użytkownika.'
+        },
+        {
+          src: ['https://github.com/Faikuu/request_inspector/raw/main/screenshots/Screenshot_20241023_225243.png?raw=true',
+            'https://github.com/Faikuu/request_inspector/raw/main/screenshots/Screenshot_20241023_224720.png?raw=true',
+            'https://github.com/Faikuu/request_inspector/raw/main/screenshots/Screenshot_20241023_224635.png?raw=true',
+            'https://github.com/Faikuu/request_inspector/raw/main/screenshots/Screenshot_20241023_224644.png?raw=true'
+          ],
+          alt: 'Request Inspector',
+          url: 'https://github.com/Faikuu/request_inspector',
+          title: 'Request Inspector',
+          description: 'Aplikacja do monitorowania i debugowania zapytań HTTP (Vue + FastApi).'
         },
         {
           src: ['screenshots/shopder2.webp', 'screenshots/shopder1.gif', 'screenshots/shopder4.webp', 'screenshots/shopder5.webp', 'screenshots/shopder3.webp'],
